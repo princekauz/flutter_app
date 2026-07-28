@@ -611,7 +611,6 @@ class AppTheme {
         borderRadius: BorderRadius.circular(12),
       ),
       behavior: SnackBarBehavior.floating,
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
     );
   }
 
