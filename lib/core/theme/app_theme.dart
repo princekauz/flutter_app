@@ -82,7 +82,7 @@ class AppTheme {
       ),
       fontFamily: 'Inter',
       scaffoldBackgroundColor: _lightBackground,
-      textTheme: _textTheme(_lightOnSurface, _lightOnSurface.withValues(alpha: 0.7)),
+      textTheme: _textTheme(_lightOnSurface, _lightOnSurface.withOpacity(0.7)),
       appBarTheme: _appBarTheme(_lightSurface, _lightOnSurface),
       elevatedButtonTheme: _elevatedButtonTheme(_lightPrimary, _lightOnPrimary),
       filledButtonTheme: _filledButtonTheme(_lightPrimary, _lightOnPrimary),
@@ -141,7 +141,7 @@ class AppTheme {
       ),
       fontFamily: 'Inter',
       scaffoldBackgroundColor: _darkBackground,
-      textTheme: _textTheme(_darkOnSurface, _darkOnSurface.withValues(alpha: 0.7)),
+      textTheme: _textTheme(_darkOnSurface, _darkOnSurface.withOpacity(0.7)),
       appBarTheme: _appBarTheme(_darkSurface, _darkOnSurface),
       elevatedButtonTheme: _elevatedButtonTheme(_darkPrimary, _darkOnPrimary),
       filledButtonTheme: _filledButtonTheme(_darkPrimary, _darkOnPrimary),
@@ -321,10 +321,10 @@ class AppTheme {
         overlayColor: WidgetStateProperty.resolveWith<Color?>(
           (Set<WidgetState> states) {
             if (states.contains(WidgetState.pressed)) {
-              return onPrimary.withValues(alpha: 0.1);
+              return onPrimary.withOpacity(0.1);
             }
             if (states.contains(WidgetState.hovered)) {
-              return onPrimary.withValues(alpha: 0.08);
+              return onPrimary.withOpacity(0.08);
             }
             return null;
           },
@@ -395,12 +395,12 @@ class AppTheme {
       fillColor: Colors.transparent,
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       hintStyle: TextStyle(
-        color: outline.withValues(alpha: 0.6),
+        color: outline.withOpacity(0.6),
         fontSize: 16,
         fontWeight: FontWeight.w400,
       ),
       labelStyle: TextStyle(
-        color: outline.withValues(alpha: 0.8),
+        color: outline.withOpacity(0.8),
         fontSize: 16,
         fontWeight: FontWeight.w400,
       ),
@@ -436,7 +436,7 @@ class AppTheme {
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: outline.withValues(alpha: 0.4), width: 1),
+        borderSide: BorderSide(color: outline.withOpacity(0.4), width: 1),
       ),
     );
   }
@@ -470,7 +470,7 @@ class AppTheme {
       elevation: 8,
       backgroundColor: surface,
       selectedItemColor: primary,
-      unselectedItemColor: primary.withValues(alpha: 0.6),
+      unselectedItemColor: primary.withOpacity(0.6),
       selectedLabelStyle: const TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w500,
@@ -490,7 +490,7 @@ class AppTheme {
     return NavigationBarThemeData(
       elevation: 8,
       backgroundColor: surface,
-      indicatorColor: primary.withValues(alpha: 0.12),
+      indicatorColor: primary.withOpacity(0.12),
       labelTextStyle: WidgetStateProperty.resolveWith<TextStyle>(
         (Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
@@ -503,7 +503,7 @@ class AppTheme {
           return TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w400,
-            color: primary.withValues(alpha: 0.6),
+            color: primary.withOpacity(0.6),
           );
         },
       ),
@@ -513,7 +513,7 @@ class AppTheme {
             return IconThemeData(color: primary, size: 24);
           }
           return IconThemeData(
-            color: primary.withValues(alpha: 0.6),
+            color: primary.withOpacity(0.6),
             size: 24,
           );
         },
@@ -546,9 +546,9 @@ class AppTheme {
   static ChipThemeData _chipTheme(Color surface, Color outline) {
     return ChipThemeData(
       backgroundColor: surface,
-      disabledColor: surface.withValues(alpha: 0.5),
-      selectedColor: outline.withValues(alpha: 0.2),
-      secondarySelectedColor: outline.withValues(alpha: 0.2),
+      disabledColor: surface.withOpacity(0.5),
+      selectedColor: outline.withOpacity(0.2),
+      secondarySelectedColor: outline.withOpacity(0.2),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       labelStyle: const TextStyle(
         fontSize: 14,
@@ -598,7 +598,7 @@ class AppTheme {
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       modalBackgroundColor: surface,
-      dragHandleColor: surface.withValues(alpha: 0.4),
+      dragHandleColor: surface.withOpacity(0.4),
       showDragHandle: true,
     );
   }
@@ -606,7 +606,7 @@ class AppTheme {
   static SnackBarThemeData _snackBarTheme() {
     return SnackBarThemeData(
       elevation: 6,
-      backgroundColor: Colors.black.withValues(alpha: 0.8),
+      backgroundColor: Colors.black.withOpacity(0.8),
       contentTextStyle: const TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w400,
@@ -624,15 +624,15 @@ class AppTheme {
   static ProgressIndicatorThemeData _progressIndicatorTheme(Color primary) {
     return ProgressIndicatorThemeData(
       color: primary,
-      linearTrackColor: primary.withValues(alpha: 0.2),
-      circularTrackColor: primary.withValues(alpha: 0.2),
+      linearTrackColor: primary.withOpacity(0.2),
+      circularTrackColor: primary.withOpacity(0.2),
     );
   }
 
   static TabBarTheme _tabBarTheme(Color primary, Color onSurface) {
     return TabBarTheme(
       labelColor: primary,
-      unselectedLabelColor: onSurface.withValues(alpha: 0.6),
+      unselectedLabelColor: onSurface.withOpacity(0.6),
       indicatorColor: primary,
       indicatorSize: TabBarIndicatorSize.label,
       labelStyle: const TextStyle(
@@ -646,7 +646,7 @@ class AppTheme {
         letterSpacing: 0.5,
       ),
       dividerColor: Colors.transparent,
-      overlayColor: WidgetStateProperty.all(primary.withValues(alpha: 0.1)),
+      overlayColor: WidgetStateProperty.all(primary.withOpacity(0.1)),
       splashFactory: NoSplash.splashFactory,
     );
   }
@@ -654,7 +654,7 @@ class AppTheme {
   static TooltipThemeData _tooltipTheme() {
     return TooltipThemeData(
       decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.8),
+        color: Colors.black.withOpacity(0.8),
         borderRadius: BorderRadius.circular(8),
       ),
       textStyle: const TextStyle(
@@ -678,7 +678,7 @@ class AppTheme {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.horizontal(right: Radius.circular(20)),
       ),
-      scrimColor: Colors.black.withValues(alpha: 0.5),
+      scrimColor: Colors.black.withOpacity(0.5),
     );
   }
 
@@ -693,17 +693,17 @@ class AppTheme {
       subtitleTextStyle: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w400,
-        color: onSurface.withValues(alpha: 0.6),
+        color: onSurface.withOpacity(0.6),
       ),
       leadingAndTrailingTextStyle: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w400,
-        color: onSurface.withValues(alpha: 0.8),
+        color: onSurface.withOpacity(0.8),
       ),
-      iconColor: onSurface.withValues(alpha: 0.6),
+      iconColor: onSurface.withOpacity(0.6),
       textColor: onSurface,
       selectedColor: onSurface,
-      selectedTileColor: onSurface.withValues(alpha: 0.08),
+      selectedTileColor: onSurface.withOpacity(0.08),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),

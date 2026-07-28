@@ -93,7 +93,7 @@ class _HomeContent extends StatelessWidget {
                     Text(
                       'Here\'s what\'s new today',
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Theme.of(context).textTheme.bodyLarge?.color?.withValues(alpha: 0.7),
+                        color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7),
                       ),
                     ),
                   ],
@@ -212,7 +212,7 @@ class _SearchContent extends StatelessWidget {
             Text(
               'Implement search functionality here',
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Theme.of(context).textTheme.bodyLarge?.color?.withValues(alpha: 0.7),
+                color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7),
               ),
             ),
           ],
@@ -298,7 +298,7 @@ class _ProfileContent extends StatelessWidget {
             Text(
               'user@example.com',
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Theme.of(context).textTheme.bodyLarge?.color?.withValues(alpha: 0.7),
+                color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7),
               ),
             ),
             const SizedBox(height: 24),

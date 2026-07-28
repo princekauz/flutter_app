@@ -82,7 +82,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                   child: Text(
                     'Skip',
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
+                      color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
                     ),
                   ),
                 ),
@@ -117,7 +117,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                   decoration: BoxDecoration(
                     color: _currentPage == index
                         ? Theme.of(context).colorScheme.primary
-                        : Theme.of(context).colorScheme.outline.withValues(alpha: 0.3),
+                        : Theme.of(context).colorScheme.outline.withOpacity(0.3),
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
@@ -163,7 +163,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
             width: 180,
             height: 180,
             decoration: BoxDecoration(
-              color: slide.color.withValues(alpha: 0.1),
+              color: slide.color.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(
@@ -188,7 +188,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
           Text(
             slide.description,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: Theme.of(context).textTheme.bodyLarge?.color?.withValues(alpha: 0.7),
+              color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7),
               height: 1.5,
             ),
             textAlign: TextAlign.center,

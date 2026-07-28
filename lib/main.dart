@@ -31,8 +31,6 @@ class FlutterApp extends ConsumerWidget {
       themeMode: ThemeMode.system,
       routerConfig: router,
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

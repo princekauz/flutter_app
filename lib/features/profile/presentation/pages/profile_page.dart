@@ -75,7 +75,7 @@ class ProfilePage extends ConsumerWidget {
                     Text(
                       'john.doe@example.com',
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Theme.of(context).textTheme.bodyLarge?.color?.withValues(alpha: 0.7),
+                        color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7),
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -244,7 +244,7 @@ class ProfilePage extends ConsumerWidget {
               Text(
                 label,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Theme.of(context).textTheme.bodyMedium?.color?.withValues(alpha: 0.7),
+                  color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.7),
                 ),
               ),
             ],
