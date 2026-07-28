@@ -1,20 +1,16 @@
-# GitHub Workflow for Flutter APK Build
-# This workflow builds and releases Flutter APKs on GitHub Actions
-
 name: Flutter APK Build
 
 on:
-  workflow_dispatch:      # Manual trigger via GitHub UI
   push:
-    branches: [main, master, develop]
+    branches: [master, main]
   pull_request:
-    branches: [main, master]
+    branches: [master, main]
+  workflow_dispatch:
 
 jobs:
   build-apk:
     name: Build Android APK
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,29 +18,27 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
-          cache: 'gradle'
+          distribution: temurin
+          java-version: 17
+          cache: gradle
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.0'
-          channel: 'stable'
+          flutter-version: 3.22.0
+          channel: stable
           cache: true
-          cache-key: "flutter-${{ runner.os }}-${{ inputs.channel }}-${{ inputs.flutter-version }}-${{ runner.arch }}"
-          cache-path: ${{ runner.tool_cache }}/flutter
+          architecture: X64
 
-      - name: Verify Flutter installation
+      - name: Create local.properties
         run: |
-          flutter --version
-          flutter doctor -v
+          echo "flutter.sdk=${{ env.FLUTTER_ROOT }}" > android/local.properties
+          echo "flutter.versionCode=${{ github.run_number }}" >> android/local.properties
+          echo "flutter.versionName=1.0.0" >> android/local.properties
+          cat android/local.properties
 
       - name: Get Flutter dependencies
         run: flutter pub get
-
-      - name: Run dart format
-        run: dart format --output=none .
 
       - name: Run Flutter analyze
         run: flutter analyze --no-fatal-infos
@@ -52,7 +46,6 @@ jobs:
 
       - name: Run Flutter tests
         run: flutter test --no-pub
-        working-directory: ${{ github.workspace }}
         continue-on-error: true
 
       - name: Build Release APK
