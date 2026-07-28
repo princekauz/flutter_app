@@ -21,7 +21,7 @@ class AppTheme {
   static const Color _lightShadow = Color(0xFF000000);
   static const Color _lightScrim = Color(0xFF000000);
   static const Color _lightInverseSurface = Color(0xFF0F172A);
-  static const Color _lightInverseOnSurface = Color(0xFFF8FAFC);
+  static const Color _lightOnInverseSurface = Color(0xFFF8FAFC);
   static const Color _lightInversePrimary = Color(0xFF93C5FD);
 
   static const Color _darkPrimary = Color(0xFF93C5FD);
@@ -44,7 +44,7 @@ class AppTheme {
   static const Color _darkShadow = Color(0xFF000000);
   static const Color _darkScrim = Color(0xFF000000);
   static const Color _darkInverseSurface = Color(0xFFF8FAFC);
-  static const Color _darkInverseOnSurface = Color(0xFF0F172A);
+  static const Color _darkOnInverseSurface = Color(0xFF0F172A);
   static const Color _darkInversePrimary = Color(0xFF2563EB);
 
   static ThemeData get lightTheme {
@@ -72,7 +72,7 @@ class AppTheme {
         shadow: _lightShadow,
         scrim: _lightScrim,
         inverseSurface: _lightInverseSurface,
-        inverseOnSurface: _lightInverseOnSurface,
+        onInverseSurface: _lightOnInverseSurface,
         inversePrimary: _lightInversePrimary,
       ),
       fontFamily: 'Inter',
@@ -130,7 +130,7 @@ class AppTheme {
         shadow: _darkShadow,
         scrim: _darkScrim,
         inverseSurface: _darkInverseSurface,
-        inverseOnSurface: _darkInverseOnSurface,
+        onInverseSurface: _darkOnInverseSurface,
         inversePrimary: _darkInversePrimary,
       ),
       fontFamily: 'Inter',
@@ -611,7 +611,7 @@ class AppTheme {
         borderRadius: BorderRadius.circular(12),
       ),
       behavior: SnackBarBehavior.floating,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
     );
   }
 
@@ -660,7 +660,6 @@ class AppTheme {
       margin: const EdgeInsets.all(8),
       preferBelow: true,
       verticalOffset: 8,
-      horizontalOffset: 0,
     );
   }
 
