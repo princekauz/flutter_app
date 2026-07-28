@@ -40,7 +40,10 @@ jobs:
           cat android/local.properties
 
       - name: Precache Flutter engine artifacts
-        run: flutter precache --android
+        run: |
+          flutter precache --android --force
+          echo "=== Flutter SDK bin cache ==="
+          ls -la /opt/hostedtoolcache/flutter/stable-3.22.0-x64/flutter/bin/cache/artifacts/engine/ || echo "No engine cache found"
 
       - name: Get Flutter dependencies
         run: flutter pub get
