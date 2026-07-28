@@ -91,7 +91,7 @@ android {
     }
 }
 
-// Add local Flutter engine artifacts as flatDir repository
+// Add local Flutter engine artifacts as flatDir repositories for each architecture
 repositories {
     google()
     mavenCentral()
@@ -101,7 +101,12 @@ repositories {
     def engineCache = file("${flutterSdk}/bin/cache/artifacts/engine")
     if (engineCache.exists()) {
         flatDir {
-            dirs engineCache
+            dirs "${engineCache}/android-arm-release"
+            dirs "${engineCache}/android-arm64-release"
+            dirs "${engineCache}/android-x64-release"
+            dirs "${engineCache}/android-arm"
+            dirs "${engineCache}/android-arm64"
+            dirs "${engineCache}/android-x64"
         }
     }
 }
