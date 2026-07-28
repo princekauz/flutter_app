@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // Light theme colors
   static const Color _lightPrimary = Color(0xFF2563EB);
   static const Color _lightPrimaryContainer = Color(0xFFDBEAFE);
   static const Color _lightSecondary = Color(0xFF0891B2);
@@ -11,13 +10,12 @@ class AppTheme {
   static const Color _lightError = Color(0xFFEF4444);
   static const Color _lightErrorContainer = Color(0xFFFEF2F2);
   static const Color _lightSurface = Color(0xFFFFFFFF);
-  static const Color _lightBackground = Color(0xFFF8FAFC);
+  static const Color _lightSurfaceContainerHighest = Color(0xFFF1F5F9);
   static const Color _lightOnPrimary = Color(0xFFFFFFFF);
   static const Color _lightOnSecondary = Color(0xFFFFFFFF);
   static const Color _lightOnTertiary = Color(0xFFFFFFFF);
   static const Color _lightOnError = Color(0xFFFFFFFF);
   static const Color _lightOnSurface = Color(0xFF0F172A);
-  static const Color _lightOnBackground = Color(0xFF0F172A);
   static const Color _lightOutline = Color(0xFFE2E8F0);
   static const Color _lightOutlineVariant = Color(0xFFCBD5E1);
   static const Color _lightShadow = Color(0xFF000000);
@@ -26,7 +24,6 @@ class AppTheme {
   static const Color _lightInverseOnSurface = Color(0xFFF8FAFC);
   static const Color _lightInversePrimary = Color(0xFF93C5FD);
 
-  // Dark theme colors
   static const Color _darkPrimary = Color(0xFF93C5FD);
   static const Color _darkPrimaryContainer = Color(0xFF1E3A5F);
   static const Color _darkSecondary = Color(0xFF22D3EE);
@@ -36,13 +33,12 @@ class AppTheme {
   static const Color _darkError = Color(0xFFF87171);
   static const Color _darkErrorContainer = Color(0xFF7F1D1D);
   static const Color _darkSurface = Color(0xFF1E293B);
-  static const Color _darkBackground = Color(0xFF0F172A);
+  static const Color _darkSurfaceContainerHighest = Color(0xFF334155);
   static const Color _darkOnPrimary = Color(0xFF1E3A5F);
   static const Color _darkOnSecondary = Color(0xFF164E63);
   static const Color _darkOnTertiary = Color(0xFF78350F);
   static const Color _darkOnError = Color(0xFF7F1D1D);
   static const Color _darkOnSurface = Color(0xFFF8FAFC);
-  static const Color _darkOnBackground = Color(0xFFF8FAFC);
   static const Color _darkOutline = Color(0xFF334155);
   static const Color _darkOutlineVariant = Color(0xFF475569);
   static const Color _darkShadow = Color(0xFF000000);
@@ -65,13 +61,12 @@ class AppTheme {
         error: _lightError,
         errorContainer: _lightErrorContainer,
         surface: _lightSurface,
-        background: _lightBackground,
+        surfaceContainerHighest: _lightSurfaceContainerHighest,
         onPrimary: _lightOnPrimary,
         onSecondary: _lightOnSecondary,
         onTertiary: _lightOnTertiary,
         onError: _lightOnError,
         onSurface: _lightOnSurface,
-        onBackground: _lightOnBackground,
         outline: _lightOutline,
         outlineVariant: _lightOutlineVariant,
         shadow: _lightShadow,
@@ -81,7 +76,7 @@ class AppTheme {
         inversePrimary: _lightInversePrimary,
       ),
       fontFamily: 'Inter',
-      scaffoldBackgroundColor: _lightBackground,
+      scaffoldBackgroundColor: _lightSurfaceContainerHighest,
       textTheme: _textTheme(_lightOnSurface, _lightOnSurface.withOpacity(0.7)),
       appBarTheme: _appBarTheme(_lightSurface, _lightOnSurface),
       elevatedButtonTheme: _elevatedButtonTheme(_lightPrimary, _lightOnPrimary),
@@ -124,13 +119,12 @@ class AppTheme {
         error: _darkError,
         errorContainer: _darkErrorContainer,
         surface: _darkSurface,
-        background: _darkBackground,
+        surfaceContainerHighest: _darkSurfaceContainerHighest,
         onPrimary: _darkOnPrimary,
         onSecondary: _darkOnSecondary,
         onTertiary: _darkOnTertiary,
         onError: _darkOnError,
         onSurface: _darkOnSurface,
-        onBackground: _darkOnBackground,
         outline: _darkOutline,
         outlineVariant: _darkOutlineVariant,
         shadow: _darkShadow,
@@ -140,7 +134,7 @@ class AppTheme {
         inversePrimary: _darkInversePrimary,
       ),
       fontFamily: 'Inter',
-      scaffoldBackgroundColor: _darkBackground,
+      scaffoldBackgroundColor: _darkSurface,
       textTheme: _textTheme(_darkOnSurface, _darkOnSurface.withOpacity(0.7)),
       appBarTheme: _appBarTheme(_darkSurface, _darkOnSurface),
       elevatedButtonTheme: _elevatedButtonTheme(_darkPrimary, _darkOnPrimary),
