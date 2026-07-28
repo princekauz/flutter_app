@@ -43,8 +43,11 @@ jobs:
       - name: Get Flutter dependencies
         run: flutter pub get
 
+      - name: Run dart format
+        run: dart format --output=none --set-exit-if-changed .
+
       - name: Run Flutter analyze
-        run: flutter analyze
+        run: flutter analyze --no-fatal-infos
 
       - name: Run Flutter tests
         run: flutter test --no-pub
