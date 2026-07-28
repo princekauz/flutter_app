@@ -91,6 +91,21 @@ android {
     }
 }
 
+// Add local Flutter engine artifacts as flatDir repository
+repositories {
+    google()
+    mavenCentral()
+    maven { url 'https://storage.googleapis.com/download.flutter.io' }
+    // Local Flutter engine artifacts from precache
+    def flutterSdk = "/opt/hostedtoolcache/flutter/stable-3.22.0-x64/flutter"
+    def engineCache = file("${flutterSdk}/bin/cache/artifacts/engine")
+    if (engineCache.exists()) {
+        flatDir {
+            dirs engineCache
+        }
+    }
+}
+
 flutter {
     source '../..'
 }
