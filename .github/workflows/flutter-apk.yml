@@ -39,6 +39,9 @@ jobs:
           echo "flutter.versionName=1.0.0" >> android/local.properties
           cat android/local.properties
 
+      - name: Precache Flutter engine artifacts
+        run: flutter precache --android
+
       - name: Get Flutter dependencies
         run: flutter pub get
 
