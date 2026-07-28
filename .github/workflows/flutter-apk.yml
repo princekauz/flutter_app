@@ -33,7 +33,13 @@ jobs:
 
       - name: Create local.properties
         run: |
-          echo "flutter.sdk=${{ steps.flutter.outputs.flutter-root }}" > android/local.properties
+          # The subosito/flutter-action installs Flutter at a known path
+          FLUTTER_SDK_PATH="/opt/hostedtoolcache/flutter/stable-3.22.0-x64/flutter"
+          if [ ! -d "$FLUTTER_SDK_PATH" ]; then
+            # Try alternative path
+            FLUTTER_SDK_PATH="/opt/hostedtoolcache/flutter/stable-3.22.0-x64"
+          fi
+          echo "flutter.sdk=$FLUTTER_SDK_PATH" > android/local.properties
           echo "flutter.versionCode=${{ github.run_number }}" >> android/local.properties
           echo "flutter.versionName=1.0.0" >> android/local.properties
           cat android/local.properties
